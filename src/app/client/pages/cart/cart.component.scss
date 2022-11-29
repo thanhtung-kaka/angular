@@ -1,0 +1,17 @@
+*{
+    // margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 40px;
+    .input-group {
+        .input-group-text{
+            min-width: 100px;
+            color: rgb(2, 102, 104);
+        }
+    }
+}
+.nocart{
+    margin-top: 70px;
+}

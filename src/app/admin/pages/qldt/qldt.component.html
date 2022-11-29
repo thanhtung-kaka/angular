@@ -1,0 +1,110 @@
+<div class="card">
+    <h1 style="text-align: center;font-weight: 100;">Các Đơn Hàng đã được duyệt</h1>
+    <div class="card-body">
+        <table class="table table-striped table-inverse table-responsive table-bordered">
+            <thead class="thead-inverse">
+                <tr>
+                    <th style="width:50px">STT</th>
+                    <th>ID</th>
+                    <th>Ten nguoi mua</th>
+                    <th>Hình thức TT</th>
+                    <th>So luong</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of getitem1; let i = index">
+                    <tr *ngFor="let item1 of item;">
+                        <td>{{i + 1}}</td>
+
+                        <td>
+                            <a class="link" (click)="item.showitem=!item.showitem">{{item1.idorder}}</a>
+                        </td>
+                        <td *ngFor="let info of item1.checkout">
+                                <p>{{info.fullname}}</p>
+                        </td>
+                        <td *ngFor="let info of item1.checkout">{{info.method}}</td>
+                        <td>{{item1.soluong}}</td>
+                        <td class="text-right">
+                            {{item1.total | number}}
+                        </td>
+
+                    </tr>
+                   <div class="row"  *ngIf="item.showitem" >
+                    
+                   
+                   </div>
+                </ng-container>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-container *ngFor="let item of getitem1; let i = index">
+    
+   <div class="card"  *ngFor="let item1 of item;">
+    <div class="row"  *ngIf="item.showitem" >
+        <div class="col-md-12" style="background-color: rgb(255, 255, 255);">
+            
+               
+                   <div class="col-md-4" *ngFor="let info of item1.checkout" style=" float: left;">
+                    <h4>thông tin khách hàng</h4>
+                    <p>Họ tên:{{info.fullname}}</p>
+                    <p> Địa chỉ:{{info.address}}</p>
+                    <p>ngày mua:{{info.ngaymua}}</p>
+                   
+                   </div>
+                   <div class="col-md-4" *ngFor="let info of item1.checkout" style="float: left;">
+                    <p>điện thoại{{info.sdt}}</p>
+                    <p>nhận hàng tại{{info.method}}</p>
+                   </div>
+                   <div class="col-md-4" *ngFor="let info of item1.user "style="float: left;" >
+                        <p>email:{{info.email}}</p>
+                   </div>
+                 
+                   <div class="col-md-12"  style="float: right; background-color: rgb(255, 255, 255);">
+                    <h4>thông tin đơn hang</h4>
+                        <table class="table table-bordered" >
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>số lượng sản phẩm</th>
+                                    <th>Id đơn hàng</th>
+                                    <th>tổng tiền đơn hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   
+                                    <td>{{item1.soluong}}</td>
+                                    <td>{{item1.id}}</td>
+                                    <td>{{item1.total}}</td>
+                                </tr>
+                            </tbody>
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>hình</th>
+                                    <th>tên sản phẩm</th>
+                                    <th>giá tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of item1.product">
+                                   
+                                    <td><img style="width: 200px; height:200px ;" src="{{product.hinh}}" alt="" srcset=""></td>
+                                    <td scope="row">{{product.name}}</td>
+                                    <td>{{product.dongia}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>        
+    </div>
+        
+       </div>
+   </div>
+</ng-container>
+<div class="card">
+    Tổng Doanh Thu:
+    <button>{{this.total|number}}:VND</button>
+</div>
+
+

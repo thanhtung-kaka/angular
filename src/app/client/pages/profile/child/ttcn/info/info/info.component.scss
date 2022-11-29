@@ -1,0 +1,15 @@
+.banner{
+    background: #DCEDFD 0% 0% no-repeat padding-box;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    .TiTle{
+        float: left;
+        text-align: center;
+        // line-height: 40px;
+    }
+    .Logo{
+        float: left;
+    }
+    
+}

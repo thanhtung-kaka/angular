@@ -1,0 +1,33 @@
+<div class="addproduct">
+    <div class="container">
+        <h5>Thêm sản phẩm</h5>
+        <div class="form-group"> 
+            <form #frmProduct="ngForm" (submit)="addProduct(frmProduct)">
+              <label for=""> ID</label><br> 
+              <input  type="text"[(ngModel)]=" product.id" name="user_id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">Tên sản phẩm</label><br> 
+              <input  type="text"[(ngModel)]=" product.name" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <label for="">Đơn giá</label><br> 
+            <input type="text"[(ngModel)]=" product.dongia" name="due_on" class="form-control" placeholder="" aria-describedby="helpId">
+            <label for="">Số lượng</label><br> 
+            <input  type="text"[(ngModel)]=" product.soluong" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <label for="">Hình</label><br> 
+          <input type="text"[(ngModel)]=" product.hinh" name="due_on" class="form-control" placeholder="" aria-describedby="helpId">
+          <label for="">Category</label><br> 
+    <select [(ngModel)]="product.category" name="status" class="form-control" placeholder="" aria-describedby="helpId">
+        <option value="dienthoai">Điện thoại</option>
+        <option value="ipad">Máy tính bản</option>
+        <option value="dongho">Đồng Hồ</option>
+    </select>
+              <!-- <input type="text" > -->
+
+             <div class="d-flex" style="margin-left: 20px;">
+                  <button class="btn btn-primary mt-3 "type="submit">Luu</button>
+   
+             </div>
+              
+               
+            </form>
+          </div>
+    </div>
+</div>

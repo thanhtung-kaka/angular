@@ -1,0 +1,81 @@
+.menu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    display: block;
+    z-index: 10;
+    nav {
+        ul {
+            margin: auto;
+            li {
+                .bi.bi-apple {
+                    fill: rgb(219, 214, 214);
+                    margin-top: 10px;
+                }
+                .bi.bi-search {
+                    color: antiquewhite;
+                    margin-top: 10px;
+                }
+                .bi.bi-bag {
+                    color: aliceblue;
+                    margin-top: 10px;
+                    margin-left: 10px;
+                }
+                a {
+                    &:hover {
+                        background: rgb(3, 120, 171);
+                        color: #fff;
+                        border-radius: 20px 20px;
+                    }
+                    &.active {
+                        background: rgb(3, 120, 171);
+                        color: #fff;
+                        border-radius: 20px 20px;
+                    }
+                }
+            }
+        }
+        // ul {
+        //     // list-style: none;
+        //     // padding: 0;
+        //     margin: auto;
+        //     li {
+        //         margin-top: 30px;
+        //         a {
+        //             // display: block;
+        //             // padding: 20px 15px;
+        //             // text-decoration: none;
+        //             // background: #fff;
+        //             // box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.126);
+        //             // border-radius: 8px;
+        //             // border: 1px solid;
+        //             &:hover {
+        //                 background: rgb(101, 189, 227);
+        //                 color: #fff;
+        //             }
+        //             &.active {
+        //                 background: rgb(3, 120, 171);
+        //                 color: #fff;
+        //                 border: 3px solid rgb(116, 239, 252);
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}
+
+main {
+    position: relative;
+    display: block;
+    margin-top: 100px;
+}
+
+.modal-body {
+    ul {
+        list-style-type: none;
+        li {
+            text-decoration: none;
+        }
+    }
+}
